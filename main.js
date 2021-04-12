@@ -1,5 +1,3 @@
-const user = require("./models/user");
-
 const express = require("express"),
     layouts = require("express-ejs-layouts"),
     app = express(),
@@ -63,8 +61,9 @@ passport.deserializeUser(User.deserializeUser);
 
 router.use((req, res, next) => {
     res.locals.flashMessages = req.flash();
-    res.locals.loggedIn = req.isUnauthenticated();
+    res.locals.loggedIn = req.isAuthenticated();
     res.locals.currentUser = req.user;
+    next();
 })
 
 router.get("/", homeController.index);
@@ -75,7 +74,7 @@ router.get("/users", usersController.index, usersController.indexView);
 router.get("/users/new", usersController.new);
 router.post("/users/create", usersController.validate, usersController.create, usersController.redirectView);
 
-//new addtions
+//new additions
 router.get("/users/login", usersController.login);
 router.post("/users/login", usersController.authenticate);
 router.get("/users/logout", usersController.logout, usersController.redirectView);

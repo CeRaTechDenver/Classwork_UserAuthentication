@@ -16,7 +16,6 @@ const User = require("../models/user"),
 
 module.exports = {
 
-    //Login
     login: (req, res) => {
         res.render("users/login");
     },
@@ -39,7 +38,6 @@ module.exports = {
     },
 
 
-    //CREATE UPDATE
     create: (req, res, next) => {
         if (req.skip) return next();
 
