@@ -1,0 +1,39 @@
+<div class="form-data">
+
+    <div class="row d-flex justify-content-center">
+        <div class="col-4">
+            <h2>Create a new subscriber:</h2>
+            <form action="/subscribers/create" method="POST">
+                <div row>
+                    <div>
+                        <label for="txtName">Name</label>
+                    </div>
+                    <div>
+                        <input class="form-control" type="text" name="name" id="txtName" placeholder="Name" autofocus required>
+                    </div>
+                    <!--name is for server side id is for client side processing-->
+
+                    <div>
+                        <label for="txtEmail"> Email Address</label>
+                    </div>
+
+                    <div>
+                        <input class="form-control" type="email" name="email" id="txtEmail" placeholder="Email" required>
+                    </div>
+                    <div>
+                        <label for="txtZipCode">Zip Code</label>
+                    </div>
+
+                    <div>
+                        <input class="form-control" type="text" name="zipCode" id="txtZipCode" placeholder="Zip Code" required>
+                    </div>
+                    <br>
+                    <div style="display: flex; align-items: center; justify-content: center;">
+                        <button type="submit"  class="button">Create</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>

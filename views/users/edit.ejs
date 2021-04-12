@@ -1,0 +1,50 @@
+<div class="form-data">
+    <div class="row d-flex justify-content-center">
+        <div class="col-4">
+            <h2>Edit user: </h2>
+            <form action="<%=`/users/${user._id}/update?_method=PUT` %>" method="POST">
+                <div row>
+                    <div>
+                        <label for="txtFirst">First Name</label>
+                    </div>
+
+                    <div>
+                        <input type="text" class="form-control" name="firstName" id="txtFirst" placeholder="First" autofocus required
+                            value="<%= user.name.first %>">
+                    </div>
+                    <!--name is for server side id is for client side processing-->
+                    <div>
+                        <label for="txtLast">Last Name</label>
+                    </div>
+                    <div>
+                        <input type="text" class="form-control" name="lastName" id="txtLast" placeholder="Last" autofocus required
+                            value="<%= user.name.last %>">
+                    </div>
+                    <!--name is for server side id is for client side processing-->
+
+                    <div>
+                        <label for="txtEmail"> Email Address</label>
+                    </div>
+                    <div>
+                        <input class="form-control" type="email" name="email" id="txtEmail" required value="<%= user.email %>">
+                    </div>
+
+                    <div>
+                        <label for="txtZipCode">Zip Code</label>
+                    </div>
+                    <div>
+                        <input class="form-control" type="text" name="zipCode" id="txtZipCode" required value="<%= user.zipCode %>">
+                    </div>
+                    <div>
+                        <label for="txtPassword">Password</label>
+                    </div>
+                    <div>
+                        <input class="form-control" type="password" name="password" id="txtPassword" required value="<%= user.password %>">
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary btn-block">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

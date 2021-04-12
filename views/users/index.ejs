@@ -1,0 +1,48 @@
+<div class="row d-flex justify-content-center">
+    <div class="col-4">
+        <h2 class="center">User Table</h2>
+        <a href="/users/new">
+            <span class="button">Create User</span>
+        </a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Zip Code</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% users.forEach(user=> { %>
+                    <tr>
+                        <td>
+                            <%= user.name.first %>
+                                <%= user.name.last %>
+                        </td>
+                        <td>
+                            <%= user.email %>
+                        </td>
+                        <td>
+                            <%= user.zipCode %>
+                        </td>
+                        <td>
+                            <a href="<%= `/users/${user._id}/edit` %>">
+                                Edit
+                            </a>
+                        </td>
+                        <td>
+                            <!-- handles the req also as a delte req-->
+                            <a href="<%= `/users/${user._id}/delete?_method=DELETE` %>"
+                                onclick="return confirm(`Are yuou sure?`)">
+                                Delete
+                            </a>
+                        </td>
+
+                    </tr>
+                    <% }) %>
+            </tbody>
+        </table>
+    </div>
+</div>

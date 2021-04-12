@@ -1,0 +1,61 @@
+<div class="form-data">
+
+    <div class="row d-flex justify-content-center">
+        <div class="col-4">
+            <h2>Create a new user:</h2>
+            <form action="/users/create" method="POST">
+                <div row>
+                    <div>
+                        <label for="txtFirst">First Name</label>
+                    </div>
+                    <div>
+                        <input class="form-control" type="text" name="first" id="txtFirst" placeholder="First" autofocus
+                            required>
+                    </div>
+                    <!--name is for server side id is for client side processing-->
+
+                    <div>
+                        <label for="txtLast">Last Name</label>
+                    </div>
+                    <div>
+                        <input class="form-control" type="text" name="last" id="txtLast" placeholder="Last" autofocus
+                            required>
+                    </div>
+                    <!--name is for server side id is for client side processing-->
+
+                    <div>
+                        <label for="txtPassword">Password</label>
+                    </div>
+                    <div>
+                        <input class="form-control" type="text" name="password" id="txtPassword" placeholder="Password"
+                            required>
+                    </div>
+
+                    <div>
+                        <label for="txtEmail"> Email Address</label>
+                    </div>
+                    <div>
+                        <input class="form-control" type="email" name="email" id="txtEmail" placeholder="Email"
+                            required>
+                    </div>
+
+
+                    <div>
+                        <label for="txtZipCode">Zip Code</label>
+                    </div>
+                    <div>
+                        <input class="form-control" type="text" name="zipCode" id="txtZipCode" placeholder="Zip Code"
+                            required>
+                    </div>
+
+
+                    <br>
+                    <div>
+                        <button type="submit" class="btn btn-primary btn-block">Create</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,40 @@
+<div class="form-data">
+    <div class="row d-flex justify-content-center">
+        <div class="col-4">
+        <form action="<%=`/subscribers/${subscriber._id}/update?_method=PUT` %>" method="POST">
+            <h2>Edit Subscriber: </h2>
+            <div row>
+                <div>
+                    <label for="txtName">Name</label>
+                </div>
+                <div>
+                    <input type="text" class="form-control" name="name" id="txtName" placeholder="Name" autofocus required
+                        value="<%= subscriber.name %>">
+                    <!--name is for server side id is for client side processing-->
+                </div>
+                <div>
+                <label for="txtEmail"> Email Address</label>
+            </div>
+
+            <div>
+                <input class="form-control" type="email" name="email" id="txtEmail" required value="<%= subscriber.email %>">
+            </div>
+
+            <div>
+                <label for="txtZipCode">Zip Code</label>
+            </div>
+
+            <div>
+                <input class="form-control" type="text" name="zipCode" id="txtZipCode" required value="<%= subscriber.zipCode %>">
+            </div>
+
+            <br>
+            <div>
+                <button type="submit" class="btn btn-primary btn-block">Save</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+</div>
+</div>

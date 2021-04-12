@@ -1,0 +1,53 @@
+<div class="form-data">
+
+    <div class="row d-flex justify-content-center">
+        <div class="col-4">
+            <h2>Create a new user:</h2>
+            <form action="/courses/create" method="POST">
+                <div row>
+                    <div>
+                        <label for="txtTitle">Course Title</label>
+                    </div>
+                    <div>
+                        <input class="form-control" type="text" name="title" id="txtTitle" placeholder="Title" autofocus
+                            required>
+                    </div>
+
+                    <br>
+                    <div>
+                        <label for="txtDescription">Course Description</label>
+                    </div>
+                    <div>
+                        <input class="form-control" type="text" name="description" id="txtDescription" placeholder="Description" autofocus
+                            required>
+                    </div>
+
+                    <br>
+                    <div>
+                        <label for="numMaxStudents">Max Number of Students</label>
+                    </div>
+                    <div>
+                        <input class="form-control" type="number" name="maxStudents" id="numMaxStudents" placeholder="Max Student Count"
+                            required>
+                    </div>
+
+                    <br>
+                    <div>
+                        <label for="numCost">Course Cost ($)</label>
+                    </div>
+                    <div>
+                        <input class="form-control" type="number" name="cost" id="numCost" placeholder="Course Cost"
+                            required>
+                    </div>
+
+
+                    <br>
+                    <div style="display: flex; align-items: center; justify-content: center;">
+                        <button type="submit" class="button">Create</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>

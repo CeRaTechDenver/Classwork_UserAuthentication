@@ -1,0 +1,46 @@
+<div class="form-data">
+    <div class="row d-flex justify-content-center">
+        <div class="col-4">
+
+            <form action="<%=`/courses/${course._id}/update?_method=PUT` %>" method="POST">
+                <h2>Edit Course: </h2>
+                <div row>
+                    <div>
+                        <label for="txtTitle">Course Title</label>
+                    </div>
+
+                    <div>
+                        <input type="text" class="form-control" name="title" id="txtTitle" placeholder="Title" autofocus
+                            required value="<%= course.title %>">
+                    </div>
+
+                    <div>
+                        <label for="txtDescription">Description</label>
+                    </div>
+                    <div>
+                        <input type="text" class="form-control" name="description" id="txtDescription"
+                            placeholder="Description" autofocus required value="<%= course.description %>">
+                    </div>
+
+                    <div>
+                        <label for="numMaxStudents">Max Number of Students</label>
+                    </div>
+                    <div>
+                        <input class="form-control" type="number" name="maxStudents" id="numMaxStudents" required
+                            value="<%= course.maxStudents %>">
+                    </div>
+
+                    <div>
+                        <label for="Cost">Course Cost ($)</label>
+                    </div>
+                    <div>
+                        <input class="form-control" type="number" name="cost" id="coursecost" required
+                            value="<%= course.cost %>">
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary btn-block">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

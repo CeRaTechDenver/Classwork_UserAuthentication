@@ -1,0 +1,32 @@
+<h2 class="center">Subscriber Data for <%= subscriber.name %></h2>
+<table class ="table">
+    <tbody>
+            <tr> <!--this makes a row-->
+                <td>Name:</td>
+                <td>
+                    <%= subscriber.name %>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>Email:</td>
+                <td>
+                    <%= subscriber.email %>
+                </td>
+            </tr>
+            <tr>
+                <td>Zip Code:</td>
+                <td>
+                    <%= subscriber.zipCode %>
+                </td>
+            </tr>
+            <tr>
+                <td>Num of Courses:</td>
+                <td> <%= subscriber.courses.length %> </td>
+            </tr>
+    </tbody>
+</table>
+
+<a href="/subscribers"> 
+    <span class="button">View all subscribers</span>
+</a>
