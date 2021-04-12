@@ -105,7 +105,7 @@ router.delete("/courses/:id/delete", coursesController.delete, coursesController
 
 
 router.use(errorController.pageNotFoundError);
-router.use(errorController.internalServererror);
+router.use(errorController.internalServerError);
 
 app.use("/", router);
 

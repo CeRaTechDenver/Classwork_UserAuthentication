@@ -69,7 +69,7 @@ userSchema.pre("save", function (next) {
 
 userSchema.plugin(passportLocalMongoose, {
     usernameField: "email"
-});
+  });
 
 module.exports = mongoose.model("User", userSchema);
                                 //name , schema used

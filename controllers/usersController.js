@@ -41,13 +41,14 @@ module.exports = {
     create: (req, res, next) => {
         if (req.skip) return next();
 
-        let userParams = getUserParams(req.body);
+        //let userParams = getUserParams(req.body);
+        //let newUser = new User(userParams);
 
-        let newUser = new User(userParams);
+        let newUser = new User( getUserParams(req.body) );
 
         User.register(newUser, req.body.password, (error, user) => {
             if (user) {
-                req.flash("success", "User Account Successfully Created!");
+                req.flash("success", 'User Account Successfully Created!');
                 res.locals.redirect = "/users";
                 next();
             }
@@ -88,11 +89,10 @@ module.exports = {
     },
     authenticate: passport.authenticate("local", {
         failureRedirect: "/users/login",
-        failureFlash: "Login failed! Check your email and passsword!",
+        failureFlash: "Failed to login.",
         successRedirect: "/",
         successFlash: "Logged in!"
-    }),
-
+      }),
 
     logout: (req, res, next) => {
         req.logout();
@@ -134,8 +134,18 @@ module.exports = {
         if (req.skip) return next();
 
         let userId = req.params.id;
-        userParams = getUserParams(req.body);
+        
+        let userParams = getUserParams(req.body);
 
+        userParams.name = {
+            first: req.body.firstName,
+            last: req.body.lastName
+        };
+        userParams.password = req.body.password;
+        userParams.email = req.body.email;
+        userParams.zipCode = req.body.zipCode;
+
+        console.log(userParams);
         User.findByIdAndUpdate(userId, { $set: userParams })
             .then(user => {
                 res.locals.user = user;
